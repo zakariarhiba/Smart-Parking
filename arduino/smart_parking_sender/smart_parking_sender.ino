@@ -109,10 +109,10 @@ void loop() {
 
     Serial.print("Sending message to topic: ");
     Serial.print(topic);
-    Serial.println(get_temperature(A0));
+    Serial.println("  18");
 
     mqttClient.beginMessage(topic);
-    mqttClient.print(get_temperature(A0));
+    mqttClient.print("18");
     mqttClient.endMessage();
 
     Serial.println();
@@ -138,11 +138,3 @@ void onMqttMessage(int messageSize) {
   Serial.println();
   Serial.println();
 }
-
-String get_temperature(int temp_pin){
-  int val = analogRead(temp_pin);
-  float mv = ( val/1024.0)*5000;
-  float cel = mv/10;
-  String temp = String(cel, 2);
-  return temp;
-  }

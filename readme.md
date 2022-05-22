@@ -52,4 +52,3 @@
     - LCD I2C
     - Ethernet
     - MQTT 
-

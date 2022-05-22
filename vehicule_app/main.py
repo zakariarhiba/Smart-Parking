@@ -9,6 +9,7 @@ from time import sleep
 class MqttApp(QThread):
     sun = pyqtSignal(str)
     temp = pyqtSignal(str)
+    slot_statut = pyqtSignal(str)
 
     def run(self):
         self.client = paho.Client()
@@ -21,6 +22,7 @@ class MqttApp(QThread):
     def on_connect(self, client, userdata, flags, rc):
         self.client.subscribe("CoreElectronics/temp")
         self.client.subscribe("CoreElectronics/sun")
+        self.client.subscribe("CoreElectronics/slot_statut")
 
     def on_message(self, client, userdata, msg):
         topic, message = msg.topic, msg.payload.decode("utf-8")
@@ -29,6 +31,8 @@ class MqttApp(QThread):
             self.temp.emit(str(message))
         elif topic == "CoreElectronics/sun":
             self.sun.emit(message)
+        elif topic == "CoreElectronics/slot_statut":
+            self.slot_statut.emit(message)
 
     def on_publish(self, client, userdata, result):
         print("data published")
@@ -61,11 +65,28 @@ class Parking(QWidget):
         self.set_ui()
         self.start_subscribing()
         self.trigged_buttons()
+        self.slot1_available = 1
+        self.slot2_available = 0
+        self.slot3_available = 0
 
     def set_ui(self):
         self.setWindowTitle("Automobile app")
         self.setGeometry(39, 30, 554, 405)
         self.setFixedSize(554, 405)
+
+    def slot_statut(self, msg):
+        if msg == "slot1_1":
+            self.slot1.setPixmap(QtGui.QPixmap("./images/park1_on.png"))
+        elif msg == "slot1_0":
+            self.slot1.setPixmap(QtGui.QPixmap("./images/park1_off.png"))
+        if msg == "slot2_1":
+            self.slot2.setPixmap(QtGui.QPixmap("./images/park2_on.png"))
+        elif msg == "slot2_0":
+            self.slot2.setPixmap(QtGui.QPixmap("./images/park2_off.png"))
+        elif msg == "slot3_1":
+            self.slot3.setPixmap(QtGui.QPixmap("./images/park3_on.png"))
+        elif msg == "slot3_0":
+            self.slot3.setPixmap(QtGui.QPixmap("./images/park3_off.png"))
 
     def trigged_buttons(self):
         # reserve buttons
@@ -93,6 +114,7 @@ class Parking(QWidget):
         self.thread = MqttApp()
         self.thread.temp.connect(self.set_temp)
         self.thread.sun.connect(self.set_sun)
+        self.thread.slot_statut.connect(self.slot_statut)
         self.thread.start()
 
     def set_temp(self, temp):
@@ -112,6 +134,10 @@ if __name__ == "__main__":
     interfaces.addWidget(parking)
 
     interfaces.show()
+
+    interfaces.setWindowTitle("Automobile app")
+    interfaces.setGeometry(39, 30, 554, 405)
+    interfaces.setFixedSize(554, 405)
 
     try:
         app.exec_()

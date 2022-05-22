@@ -21,31 +21,35 @@
 ### Plan de Travail : 
 
 ## Semaine 1 :
-- Install Pré Requis ( VS Code - Putty - Python - Arduino IDE)
-- Initialisation d'environement (Raspberry Pi SSH)
-- Complete Matérial
+- Install Pré Requis ( VS Code - Putty - Python - Arduino IDE) : soldé
+- Initialisation d'environement (Raspberry Pi SSH) : soldé
+- Complete Matérial : soldé
 
 ## Semaine 2 : 
-- Programation Arduino fonctions ( porte de l'entrée et sortie et LCD incrementation, décrementation de compteur )
-- Dévelopement des Interfaces Graphiques PyQt5 
+- Programation Arduino fonctions ( porte de l'entrée et sortie et LCD incrementation, décrementation de compteur ) : 80%
+- Dévelopement des Interfaces Graphiques PyQt5 : 70%
 
 ## Semaine 3 : 
-- Dévelopement de API ( MQTT ou HTTP )
-- IoT
+- Dévelopement de API ( MQTT ou HTTP ) : 50%
 
 ## Semaine 4 : 
-- Protoype et test
+- Protoype et test : 0%
 
 ## le reste des semaines : 
-- Finilisation de protoype
-- Ajoute des nouveau propriétes 
-- Préparation de soutenance
-- Finilisation de Rapport 
+- Finilisation de protoype  : 0%
+- Ajoute des nouveau propriétes : 0%
+- Préparation de soutenance : 0%
+- Finilisation de Rapport : 25%
 
-### Taches à faire chaque jour : 
-
-- Minimum 1 h de travail
-- 1h de rédaction de Rapport 
-- Petit rapport de l'état d'avencement
-- Révision python petit video 
+### Taches à faire les prochaines jours : 
+- 1h de rédaction de Rapport minimum chaque jour 
+- Comprend le code Python d'application
+- Apprendre à coder Arduino: 
+    - Capteur IR
+    - Servo Motor
+    - LM35
+    - LDR
+    - LCD I2C
+    - Ethernet
+    - MQTT 
 

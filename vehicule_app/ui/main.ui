@@ -109,20 +109,24 @@ QPushButton::pressed
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="title">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>0</y>
+      <x>150</x>
+      <y>10</y>
       <width>341</width>
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color:orange;font-size:14pt; font-weight:600; font-style:italic;
+</string>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:orange;font-size:14pt; font-weight:600; font-style:italic;&quot;&gt;Smart Parking IoT Solution&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Smart Parking IoT Solution</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="button_start_2">
+   <widget class="QPushButton" name="button_about">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -139,6 +143,34 @@ QPushButton::pressed
      <string>About</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="langage">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>340</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 215, 158);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Anglais</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Francais</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>عربى</string>
+     </property>
+    </item>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -152,8 +184,6 @@ QPushButton::pressed
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="../images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

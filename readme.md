@@ -16,7 +16,8 @@
 
 - Reserver une place : si vous avez reserver vous devez à l'entre de parking clicker sur une button sur l'app sinon s'il n y a acunne place disponible vous ne pouvez pas entrez
 
-- Compteur de temps : pour la coté commerciel
+- Multi Langue
+
 
 ### Plan de Travail : 
 
@@ -27,10 +28,10 @@
 
 ## Semaine 2 : 
 - Programation Arduino fonctions ( porte de l'entrée et sortie et LCD incrementation, décrementation de compteur ) : 80%
-- Dévelopement des Interfaces Graphiques PyQt5 : 70%
+- Dévelopement des Interfaces Graphiques PyQt5 : 90%
 
 ## Semaine 3 : 
-- Dévelopement de API ( MQTT ou HTTP ) : 50%
+- Dévelopement de API ( MQTT ou HTTP ) : 70%
 
 ## Semaine 4 : 
 - Protoype et test : 0%
@@ -39,7 +40,7 @@
 - Finilisation de protoype  : 0%
 - Ajoute des nouveau propriétes : 0%
 - Préparation de soutenance : 0%
-- Finilisation de Rapport : 25%
+- Finilisation de Rapport : 30%
 
 ### Taches à faire les prochaines jours : 
 - 1h de rédaction de Rapport minimum chaque jour 

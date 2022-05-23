@@ -53,9 +53,31 @@ class Main(QMainWindow):
         self.setGeometry(39, 30, 554, 405)
         self.setFixedSize(554, 405)
         uic.loadUi("./ui/main.ui", self)
+        self.langage.activated[str].connect(self.set_langage)
 
     def trigged_buttons(self):
         self.button_start.clicked.connect(lambda: interfaces.setCurrentWidget(parking))
+
+    def set_langage(self, langage):
+        if langage == "Francais":
+            self.title.setText("IoT Intelligent Parking Solution")
+            self.button_start.setText("Réserver Maintenant")
+            self.button_about.setText("About Nous")
+            parking.title.setText("IoT Intelligent Parking Solution")
+        elif langage == "Anglais":
+            self.title.setText("Smart Parking IoT Solution")
+            parking.title.setText("Smart Parking IoT Solution")
+            self.button_start.setText("Get Started")
+            self.button_about.setText("About US")
+        else:
+            self.title.setText("حلول إنترنت الأشياء لمواقف السيارات")
+            parking.title.setText("حلول إنترنت الأشياء لمواقف السيارات")
+            self.button_start.setText("البدء")
+            self.button_about.setText("معلومات عنا")
+
+        self.title.setStyleSheet(
+            " color:orange;font-size:14pt; font-weight:550; font-style:italic;"
+        )
 
 
 class Parking(QWidget):

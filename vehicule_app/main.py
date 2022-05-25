@@ -10,6 +10,7 @@ class MqttApp(QThread):
     sun = pyqtSignal(str)
     temp = pyqtSignal(str)
     slot_statut = pyqtSignal(str)
+    slot_reserve_response = pyqtSignal(str)
 
     def run(self):
         self.client = paho.Client()
@@ -23,6 +24,7 @@ class MqttApp(QThread):
         self.client.subscribe("CoreElectronics/temp")
         self.client.subscribe("CoreElectronics/sun")
         self.client.subscribe("CoreElectronics/slot_statut")
+        self.client.subscribe("CoreElectronics/slot_reserve_response")
 
     def on_message(self, client, userdata, msg):
         topic, message = msg.topic, msg.payload.decode("utf-8")
@@ -33,6 +35,8 @@ class MqttApp(QThread):
             self.sun.emit(message)
         elif topic == "CoreElectronics/slot_statut":
             self.slot_statut.emit(message)
+        elif topic == "CoreElectronics/slot_reserve_response":
+            self.slot_reserve_response.emit(message)
 
     def on_publish(self, client, userdata, result):
         print("data published")
@@ -50,8 +54,8 @@ class Main(QMainWindow):
 
     def set_ui(self):
         self.setWindowTitle("Automobile app")
-        self.setGeometry(39, 30, 554, 405)
-        self.setFixedSize(554, 405)
+        self.setGeometry(39, 30, 603, 478)
+        self.setFixedSize(603, 478)
         uic.loadUi("./ui/main.ui", self)
         self.langage.activated[str].connect(self.set_langage)
 
@@ -64,16 +68,40 @@ class Main(QMainWindow):
             self.button_start.setText("Réserver Maintenant")
             self.button_about.setText("About Nous")
             parking.title.setText("IoT Intelligent Parking Solution")
+            parking.temp_c.setText("Température C :")
+            parking.sun.setText("Sun :")
+            parking.button_reserve_1.setText("réserve")
+            parking.button_reserve_2.setText("réserve")
+            parking.button_reserve_3.setText("réserve")
+            parking.button_unreserve_1.setText("annuler une réservation")
+            parking.button_unreserve_2.setText("annuler une réservation")
+            parking.button_unreserve_3.setText("annuler une réservation")
         elif langage == "Anglais":
             self.title.setText("Smart Parking IoT Solution")
             parking.title.setText("Smart Parking IoT Solution")
             self.button_start.setText("Get Started")
             self.button_about.setText("About US")
+            parking.temp_c.setText("Temperature C :")
+            parking.sun.setText("Sun :")
+            parking.button_reserve_1.setText("reserve")
+            parking.button_reserve_2.setText("reserve")
+            parking.button_reserve_3.setText("reserve")
+            parking.button_unreserve_1.setText("unreserve")
+            parking.button_unreserve_2.setText("unreserve")
+            parking.button_unreserve_3.setText("unreserve")
         else:
             self.title.setText("حلول إنترنت الأشياء لمواقف السيارات")
             parking.title.setText("حلول إنترنت الأشياء لمواقف السيارات")
             self.button_start.setText("البدء")
             self.button_about.setText("معلومات عنا")
+            parking.temp_c.setText("درجة الحرارة C :")
+            parking.sun.setText("شمس :")
+            parking.button_reserve_1.setText("حجز")
+            parking.button_reserve_2.setText("حجز")
+            parking.button_reserve_3.setText("حجز")
+            parking.button_unreserve_1.setText("إلغاء حجز")
+            parking.button_unreserve_2.setText("إلغاء حجز")
+            parking.button_unreserve_3.setText("إلغاء حجز")
 
         self.title.setStyleSheet(
             " color:orange;font-size:14pt; font-weight:550; font-style:italic;"
@@ -93,8 +121,8 @@ class Parking(QWidget):
 
     def set_ui(self):
         self.setWindowTitle("Automobile app")
-        self.setGeometry(39, 30, 554, 405)
-        self.setFixedSize(554, 405)
+        self.setGeometry(39, 30, 603, 478)
+        self.setFixedSize(603, 478)
 
     def slot_statut(self, msg):
         if msg == "slot1_1":
@@ -137,6 +165,7 @@ class Parking(QWidget):
         self.thread.temp.connect(self.set_temp)
         self.thread.sun.connect(self.set_sun)
         self.thread.slot_statut.connect(self.slot_statut)
+        self.thread.slot_reserve_response.connect(self.slot_reserve_check)
         self.thread.start()
 
     def set_temp(self, temp):
@@ -144,6 +173,10 @@ class Parking(QWidget):
 
     def set_sun(self, sun):
         self.sun_statut.setText(str(sun))
+
+    def slot_reserve_check(self, msg):
+        if msg == "slot1_ok":
+            pass
 
 
 if __name__ == "__main__":
@@ -158,8 +191,8 @@ if __name__ == "__main__":
     interfaces.show()
 
     interfaces.setWindowTitle("Automobile app")
-    interfaces.setGeometry(39, 30, 554, 405)
-    interfaces.setFixedSize(554, 405)
+    interfaces.setGeometry(39, 30, 603, 478)
+    interfaces.setFixedSize(603, 478)
 
     try:
         app.exec_()

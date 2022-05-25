@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>405</height>
+    <width>603</width>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -53,8 +53,8 @@ QPushButton::pressed
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>140</y>
+     <x>70</x>
+     <y>130</y>
      <width>481</width>
      <height>211</height>
     </rect>
@@ -104,8 +104,8 @@ QPushButton::pressed
   <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>290</y>
+     <x>70</x>
+     <y>350</y>
      <width>481</width>
      <height>41</height>
     </rect>
@@ -137,8 +137,8 @@ QPushButton::pressed
   <widget class="QWidget" name="horizontalLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>340</y>
+     <x>70</x>
+     <y>400</y>
      <width>481</width>
      <height>41</height>
     </rect>
@@ -170,8 +170,8 @@ QPushButton::pressed
   <widget class="QWidget" name="horizontalLayoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>60</y>
+     <x>30</x>
+     <y>50</y>
      <width>541</width>
      <height>31</height>
     </rect>
@@ -181,7 +181,7 @@ QPushButton::pressed
      <number>4</number>
     </property>
     <item>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="temp_c">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; font-style:italic;&quot;&gt;Temperature C: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -213,7 +213,7 @@ QPushButton::pressed
      </spacer>
     </item>
     <item>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="sun">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -239,19 +239,6 @@ QPushButton::pressed
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>100</y>
-     <width>161</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Park Statut :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
@@ -267,6 +254,45 @@ QPushButton::pressed
    </property>
    <property name="text">
     <string>Smart Parking IoT Solution</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>90</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>90</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>90</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

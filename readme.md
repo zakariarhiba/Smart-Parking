@@ -12,11 +12,11 @@
 
 ## Application features : 
 
-- Superviser parking : Temperature, sun, combien de place disponible
+- Superviser parking : Temperature, sun, combien de place disponible -> soldé
 
-- Reserver une place : si vous avez reserver vous devez à l'entre de parking clicker sur une button sur l'app sinon s'il n y a acunne place disponible vous ne pouvez pas entrez
+- Multi Langue -> soldé
 
-- Multi Langue
+- Reserver une place : si vous avez reserver vous devez à l'entre de parking clicker sur une button sur l'app sinon s'il n y a acunne place disponible vous ne pouvez pas entrez -> en cours
 
 
 ### Plan de Travail : 
@@ -27,14 +27,14 @@
 - Complete Matérial : soldé
 
 ## Semaine 2 : 
-- Programation Arduino fonctions ( porte de l'entrée et sortie et LCD incrementation, décrementation de compteur ) : 80%
-- Dévelopement des Interfaces Graphiques PyQt5 : 90%
+- Programation Arduino fonctions ( porte de l'entrée et sortie et LCD incrementation, décrementation de compteur ) : soldé
+- Dévelopement des Interfaces Graphiques PyQt5 : soldé
 
 ## Semaine 3 : 
-- Dévelopement de API ( MQTT ou HTTP ) : 70%
+- Dévelopement de API ( MQTT ou HTTP ) : 90%
 
 ## Semaine 4 : 
-- Protoype et test : 0%
+- Protoype et test : 10%
 
 ## le reste des semaines : 
 - Finilisation de protoype  : 0%
@@ -43,13 +43,7 @@
 - Finilisation de Rapport : 30%
 
 ### Taches à faire les prochaines jours : 
-- 1h de rédaction de Rapport minimum chaque jour 
+- Terminer les 3 premier chapitres
 - Comprend le code Python d'application
-- Apprendre à coder Arduino: 
-    - Capteur IR
-    - Servo Motor
-    - LM35
-    - LDR
-    - LCD I2C
-    - Ethernet
-    - MQTT 
+- Comprend le code Arduino
+- Maitrise Raspberry OS

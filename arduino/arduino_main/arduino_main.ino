@@ -2,6 +2,8 @@
 #include <Ethernet.h>
 #include <ArduinoMqttClient.h>
 
+#define temp_pin A0
+
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
 // Set the static IP address to use if the DHCP fails to assign
@@ -17,6 +19,7 @@ const char topic[]  = "CoreElectronics/temp";
 const char topic2[]  = "CoreElectronics/sun";
 const char topic_in1[]  = "CoreElectronics/reserve";
 const char topic_in2[]  = "CoreElectronics/unreserve";
+
 const long interval = 1000;
 unsigned long previousMillis = 0;
 
@@ -96,10 +99,10 @@ void loop() {
     // Send Temperature Sensor Value
     Serial.print("Sending message to topic: ");
     Serial.print(topic);
-    Serial.println(get_temperature(A0));
+    Serial.println(get_temperature(temp_pin));
     // send message, the Print interface can be used to set the message contents
     mqttClient.beginMessage(topic);
-    mqttClient.print(get_temperature(A0));
+    mqttClient.print(get_temperature(temp_pin));
     mqttClient.endMessage();
 
     // Send LDR Sun value
